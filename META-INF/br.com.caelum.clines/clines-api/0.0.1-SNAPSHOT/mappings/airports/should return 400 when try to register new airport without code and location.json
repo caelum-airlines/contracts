@@ -1,0 +1,26 @@
+{
+  "id" : "4529a0b7-50a2-4f51-8da0-7bbb8563286c",
+  "request" : {
+    "url" : "airports",
+    "method" : "POST",
+    "headers" : {
+      "Content-Type" : {
+        "matches" : "application/json.*"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$[?(@.['code'] == null)]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['locationId'] == null)]"
+    } ]
+  },
+  "response" : {
+    "status" : 400,
+    "body" : "{\"errors\":[{\"field\":\"code\",\"message\":\"must not be blank\"},{\"field\":\"locationId\",\"message\":\"must not be null\"}]}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "4529a0b7-50a2-4f51-8da0-7bbb8563286c"
+}

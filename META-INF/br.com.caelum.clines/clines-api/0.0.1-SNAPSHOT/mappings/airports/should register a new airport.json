@@ -1,0 +1,25 @@
+{
+  "id" : "16e88919-ecd3-465f-ad51-ae892b28e5c5",
+  "request" : {
+    "url" : "airports",
+    "method" : "POST",
+    "headers" : {
+      "Content-Type" : {
+        "matches" : "application/json.*"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$[?(@.['code'] == 'cgh')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['locationId'] == 2)]"
+    } ]
+  },
+  "response" : {
+    "status" : 201,
+    "headers" : {
+      "Location" : "/airports/CGH"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "16e88919-ecd3-465f-ad51-ae892b28e5c5"
+}

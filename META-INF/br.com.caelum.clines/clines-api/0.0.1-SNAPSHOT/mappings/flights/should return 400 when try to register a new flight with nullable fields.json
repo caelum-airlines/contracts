@@ -1,0 +1,27 @@
+{
+  "id" : "a01c2856-45d8-4d2e-af96-35092940c488",
+  "request" : {
+    "url" : "flights",
+    "method" : "POST",
+    "headers" : {
+      "Content-Type" : {
+        "matches" : "application/json.*"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$[?(@.['price'] == null)]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['aircraftId'] == null)]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['departure'] == null)]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['arrival'] == null)]"
+    } ]
+  },
+  "response" : {
+    "status" : 400,
+    "body" : "{\"errors\":[{\"field\":\"price\",\"message\":\"must not be null\"},{\"field\":\"aircraftId\",\"message\":\"must not be blank\"},{\"field\":\"departure\",\"message\":\"must not be blank\"},{\"field\":\"arrival\",\"message\":\"must not be blank\"}]}",
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "a01c2856-45d8-4d2e-af96-35092940c488"
+}
