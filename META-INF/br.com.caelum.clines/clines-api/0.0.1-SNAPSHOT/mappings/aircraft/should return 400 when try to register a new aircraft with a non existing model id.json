@@ -1,5 +1,5 @@
 {
-  "id" : "cf1c498e-0e32-4816-b43d-0bba51df316d",
+  "id" : "8de97f06-7551-455b-aaa0-425b37d91bdc",
   "request" : {
     "url" : "aircraft",
     "method" : "POST",
@@ -19,5 +19,5 @@
     "body" : "{\"errors\":[{\"message\":\"Cannot find aircraft model\"}]}",
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "cf1c498e-0e32-4816-b43d-0bba51df316d"
+  "uuid" : "8de97f06-7551-455b-aaa0-425b37d91bdc"
 }

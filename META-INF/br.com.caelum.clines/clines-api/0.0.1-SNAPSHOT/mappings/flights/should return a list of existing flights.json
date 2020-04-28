@@ -1,16 +1,16 @@
 {
-  "id" : "4ad0a263-b216-4e91-bd9a-ee737d6e380f",
+  "id" : "53e1c6aa-7835-4cfa-a06a-ac60e956b058",
   "request" : {
     "url" : "flights",
     "method" : "GET"
   },
   "response" : {
     "status" : 200,
-    "body" : "[{\"id\":1,\"price\":4.854792302696331,\"departure\":{\"time\":\"5319-12-03T17:26:38800\",\"code\":\"GRU\",\"gate\":\"23C\"},\"arrival\":{\"time\":\"3005-10-31T20:23:26♄1\",\"code\":\"CGH\",\"gate\":\"12B\"},\"aircraft\":{\"code\":\"AC123AX\",\"model\":{\"id\":1,\"description\":\"Boeing 737 800\"}}}]",
+    "body" : "[{\"id\":1,\"price\":83.39999078907826,\"departure\":{\"time\":\"6584-12-06T20:42:02涴4\",\"code\":\"GRU\",\"gate\":\"23C\"},\"arrival\":{\"time\":\"1428-11-31T23:44:43庰213457\",\"code\":\"CGH\",\"gate\":\"12B\"},\"aircraft\":{\"code\":\"AC123AX\",\"model\":{\"id\":1,\"description\":\"Boeing 737 800\"}}}]",
     "headers" : {
       "Content-Type" : "application/json"
     },
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "4ad0a263-b216-4e91-bd9a-ee737d6e380f"
+  "uuid" : "53e1c6aa-7835-4cfa-a06a-ac60e956b058"
 }

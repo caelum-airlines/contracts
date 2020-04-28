@@ -1,5 +1,5 @@
 {
-  "id" : "de59fad1-184e-41d6-8f76-d3eaf161b3f6",
+  "id" : "f2eaa9ff-6e6c-4d11-9c4c-3001bde9c500",
   "request" : {
     "url" : "aircraft",
     "method" : "POST",
@@ -19,5 +19,5 @@
     "body" : "{\"errors\":[{\"field\":\"code\",\"message\":\"must not be null\"},{\"field\":\"modelId\",\"message\":\"must not be null\"}]}",
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "de59fad1-184e-41d6-8f76-d3eaf161b3f6"
+  "uuid" : "f2eaa9ff-6e6c-4d11-9c4c-3001bde9c500"
 }
