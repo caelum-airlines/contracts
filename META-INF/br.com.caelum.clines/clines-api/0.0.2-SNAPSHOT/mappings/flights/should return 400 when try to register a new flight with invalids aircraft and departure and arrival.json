@@ -1,7 +1,7 @@
 {
-  "id" : "5c5cf3b2-9f2e-4471-b7e7-a2d07b4ca348",
+  "id" : "e2f89abf-9e94-4240-b6d2-ab6c6881ca0c",
   "request" : {
-    "url" : "flights",
+    "url" : "/flights",
     "method" : "POST",
     "headers" : {
       "Content-Type" : {
@@ -9,19 +9,19 @@
       }
     },
     "bodyPatterns" : [ {
-      "matchesJsonPath" : "$[?(@.['price'] == 97.83291464509838)]"
+      "matchesJsonPath" : "$[?(@.['price'] == 265.44425898101207)]"
     }, {
       "matchesJsonPath" : "$[?(@.['aircraftId'] == 'BC123AX')]"
     }, {
       "matchesJsonPath" : "$.['departure'][?(@.['airportId'] == 3)]"
     }, {
-      "matchesJsonPath" : "$.['departure'][?(@.['time'] == '2020-04-30T12:10:11.668572')]"
+      "matchesJsonPath" : "$.['departure'][?(@.['time'] == '2020-04-30T12:19:28.684035')]"
     }, {
       "matchesJsonPath" : "$.['departure'][?(@.['gate'] == '28C')]"
     }, {
       "matchesJsonPath" : "$.['arrival'][?(@.['airportId'] == 4)]"
     }, {
-      "matchesJsonPath" : "$.['arrival'][?(@.['time'] == '2020-04-30T12:10:11.668572')]"
+      "matchesJsonPath" : "$.['arrival'][?(@.['time'] == '2020-04-30T12:19:28.684035')]"
     }, {
       "matchesJsonPath" : "$.['arrival'][?(@.['gate'] == '28C')]"
     } ]
@@ -31,5 +31,5 @@
     "body" : "{\"errors\":[{\"message\":\"Invalid Aircraft\"},{\"message\":\"Invalid Departure\"},{\"message\":\"Invalid Arrival\"}]}",
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "5c5cf3b2-9f2e-4471-b7e7-a2d07b4ca348"
+  "uuid" : "e2f89abf-9e94-4240-b6d2-ab6c6881ca0c"
 }

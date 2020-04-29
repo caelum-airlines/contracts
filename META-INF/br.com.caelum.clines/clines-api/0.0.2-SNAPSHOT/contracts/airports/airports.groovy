@@ -1,6 +1,6 @@
 import org.springframework.cloud.contract.spec.Contract
 
-final BASE_URL = "airports"
+final BASE_URL = "/airports"
 final EXISTING_AIRPORT_CODE = "gru"
 final NON_EXISTING_AIRPORT_CODE = "cgh"
 
@@ -93,7 +93,7 @@ final GRU_AIRPORT =  [
                 status CREATED()
 
                 headers {
-                    header(location(), "/${BASE_URL}/${NON_EXISTING_AIRPORT_CODE.toUpperCase()}")
+                    header(location(), "${BASE_URL}/${NON_EXISTING_AIRPORT_CODE.toUpperCase()}")
                 }
 
                 bodyMatchers {

@@ -1,7 +1,7 @@
 {
-  "id" : "7bf301a4-a5d6-402c-b743-4409c4e056b8",
+  "id" : "acaa742d-d681-414d-815c-86a8b6ae16b3",
   "request" : {
-    "url" : "aircraft",
+    "url" : "/aircraft",
     "method" : "POST",
     "headers" : {
       "Content-Type" : {
@@ -17,9 +17,9 @@
   "response" : {
     "status" : 201,
     "headers" : {
-      "Location" : "/{{{request.url}}}/{{{jsonPath request.body '$.code'}}}"
+      "Location" : "{{{request.url}}}/{{{jsonPath request.body '$.code'}}}"
     },
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "7bf301a4-a5d6-402c-b743-4409c4e056b8"
+  "uuid" : "acaa742d-d681-414d-815c-86a8b6ae16b3"
 }

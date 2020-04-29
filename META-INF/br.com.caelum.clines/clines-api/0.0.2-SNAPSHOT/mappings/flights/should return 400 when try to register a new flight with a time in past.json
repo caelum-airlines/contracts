@@ -1,7 +1,7 @@
 {
-  "id" : "4602dee3-8947-4383-b386-0f73c45cb1b9",
+  "id" : "2921cd28-f49c-4d1b-b836-aa025c258e82",
   "request" : {
-    "url" : "flights",
+    "url" : "/flights",
     "method" : "POST",
     "headers" : {
       "Content-Type" : {
@@ -9,19 +9,19 @@
       }
     },
     "bodyPatterns" : [ {
-      "matchesJsonPath" : "$[?(@.['price'] == 97.83291464509838)]"
+      "matchesJsonPath" : "$[?(@.['price'] == 265.44425898101207)]"
     }, {
       "matchesJsonPath" : "$[?(@.['aircraftId'] == 'AC123AX')]"
     }, {
       "matchesJsonPath" : "$.['departure'][?(@.['airportId'] == 1)]"
     }, {
-      "matchesJsonPath" : "$.['departure'][?(@.['time'] == '2020-04-28T12:10:11.668701')]"
+      "matchesJsonPath" : "$.['departure'][?(@.['time'] == '2020-04-28T12:19:28.686552')]"
     }, {
       "matchesJsonPath" : "$.['departure'][?(@.['gate'] == '28C')]"
     }, {
       "matchesJsonPath" : "$.['arrival'][?(@.['airportId'] == 2)]"
     }, {
-      "matchesJsonPath" : "$.['arrival'][?(@.['time'] == '2020-04-30T12:10:11.668572')]"
+      "matchesJsonPath" : "$.['arrival'][?(@.['time'] == '2020-04-30T12:19:28.684035')]"
     }, {
       "matchesJsonPath" : "$.['arrival'][?(@.['gate'] == '28C')]"
     } ]
@@ -31,5 +31,5 @@
     "body" : "{\"errors\":[{\"message\":\"must be a date in the present or in the future\",\"field\":\"departure.time\"}]}",
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "4602dee3-8947-4383-b386-0f73c45cb1b9"
+  "uuid" : "2921cd28-f49c-4d1b-b836-aa025c258e82"
 }
