@@ -22,7 +22,7 @@ final DEFAULT_AIRCRAFT_RESULT = [
             name "should return a list of all aircraft"
 
             request {
-                url BASE_URL
+                url "${BASE_URL}/"
                 method GET()
             }
 
@@ -42,7 +42,7 @@ final DEFAULT_AIRCRAFT_RESULT = [
             name "should show details of the aircraft by code"
 
             request {
-                url "${BASE_URL}/${EXISTING_AIRCRAFT_CODE}"
+                url "${BASE_URL}/${EXISTING_AIRCRAFT_CODE}/"
                 method GET()
 
             }
@@ -63,7 +63,7 @@ final DEFAULT_AIRCRAFT_RESULT = [
             name "should return 404 when receive a non-existing aircraft code"
 
             request {
-                url "${BASE_URL}/${NON_EXISTING_AIRCRAFT_CODE}"
+                url "${BASE_URL}/${NON_EXISTING_AIRCRAFT_CODE}/"
                 method GET()
 
             }
@@ -81,7 +81,7 @@ final DEFAULT_AIRCRAFT_RESULT = [
             request {
                 method POST()
 
-                url BASE_URL
+                url "${BASE_URL}/"
 
                 headers {
                     contentType applicationJson()
@@ -97,7 +97,7 @@ final DEFAULT_AIRCRAFT_RESULT = [
                 status CREATED()
 
                 headers {
-                    header(location(), $(producer("${fromRequest().url()}/${NON_EXISTING_AIRCRAFT_CODE}"), consumer("${fromRequest().url()}/${fromRequest().body('$.code')}")))
+                    header(location(), $(producer("${BASE_URL}/${NON_EXISTING_AIRCRAFT_CODE}"), consumer("${BASE_URL}/${fromRequest().body('$.code')}")))
                 }
             }
         },
@@ -106,7 +106,7 @@ final DEFAULT_AIRCRAFT_RESULT = [
             name "should return 409 when try to register an existing aircraft"
             request {
                 method POST()
-                url BASE_URL
+                url "${BASE_URL}/"
 
                 headers {
                     contentType applicationJson()
@@ -133,7 +133,7 @@ final DEFAULT_AIRCRAFT_RESULT = [
             name "should return 400 when try to register a new aircraft with a non existing model id"
             request {
                 method POST()
-                url BASE_URL
+                url "${BASE_URL}/"
 
                 headers {
                     contentType applicationJson()
@@ -160,7 +160,7 @@ final DEFAULT_AIRCRAFT_RESULT = [
 
             request {
                 method POST()
-                url BASE_URL
+                url "${BASE_URL}/"
 
                 headers {
                     contentType applicationJson()
@@ -195,7 +195,7 @@ final DEFAULT_AIRCRAFT_RESULT = [
 
             request {
                 method POST()
-                url BASE_URL
+                url "${BASE_URL}/"
                 headers {
                     contentType applicationJson()
                 }

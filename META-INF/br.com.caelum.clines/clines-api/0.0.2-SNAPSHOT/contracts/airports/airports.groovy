@@ -20,7 +20,7 @@ final GRU_AIRPORT =  [
             request {
                 method GET()
 
-                url "${BASE_URL}/${EXISTING_AIRPORT_CODE}"
+                url "${BASE_URL}/${EXISTING_AIRPORT_CODE}/"
             }
 
             response {
@@ -41,7 +41,7 @@ final GRU_AIRPORT =  [
             request {
                 method GET()
 
-                url "${BASE_URL}/${NON_EXISTING_AIRPORT_CODE}"
+                url "${BASE_URL}/${NON_EXISTING_AIRPORT_CODE}/"
             }
 
             response {
@@ -58,7 +58,7 @@ final GRU_AIRPORT =  [
 
             request {
                 method GET()
-                url BASE_URL
+                url "${BASE_URL}/"
             }
 
             response {
@@ -77,7 +77,7 @@ final GRU_AIRPORT =  [
             request {
                 method POST()
 
-                url BASE_URL
+                url "${BASE_URL}/"
 
                 headers {
                     contentType applicationJson()
@@ -108,7 +108,7 @@ final GRU_AIRPORT =  [
             request {
                 method POST()
 
-                url BASE_URL
+                url "${BASE_URL}/"
 
                 headers {
                     contentType applicationJson()
@@ -141,7 +141,7 @@ final GRU_AIRPORT =  [
             request {
                 method POST()
 
-                url BASE_URL
+                url "${BASE_URL}/"
 
                 headers {
                     contentType applicationJson()
@@ -175,7 +175,7 @@ final GRU_AIRPORT =  [
             request {
                 method POST()
 
-                url BASE_URL
+                url "${BASE_URL}/"
 
                 headers {
                     contentType applicationJson()
@@ -209,7 +209,7 @@ final GRU_AIRPORT =  [
             request {
                 method POST()
 
-                url BASE_URL
+                url "${BASE_URL}/"
 
                 headers {
                     contentType applicationJson()

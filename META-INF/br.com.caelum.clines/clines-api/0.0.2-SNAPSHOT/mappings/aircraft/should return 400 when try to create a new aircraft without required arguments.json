@@ -1,7 +1,7 @@
 {
-  "id" : "efb13b76-3a27-4053-a6ed-42acece23c32",
+  "id" : "9fb612ec-e75f-4b71-a4b5-49c2be6fd7f9",
   "request" : {
-    "url" : "/aircraft",
+    "url" : "/aircraft/",
     "method" : "POST",
     "headers" : {
       "Content-Type" : {
@@ -19,5 +19,5 @@
     "body" : "{\"errors\":[{\"field\":\"code\",\"message\":\"must not be null\"},{\"field\":\"modelId\",\"message\":\"must not be null\"}]}",
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "efb13b76-3a27-4053-a6ed-42acece23c32"
+  "uuid" : "9fb612ec-e75f-4b71-a4b5-49c2be6fd7f9"
 }
