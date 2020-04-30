@@ -1,0 +1,12 @@
+{
+  "id" : "cdbe314a-4167-4517-bb55-dfe3cfe3bf30",
+  "request" : {
+    "url" : "/airports/cgh/",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 404,
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "cdbe314a-4167-4517-bb55-dfe3cfe3bf30"
+}

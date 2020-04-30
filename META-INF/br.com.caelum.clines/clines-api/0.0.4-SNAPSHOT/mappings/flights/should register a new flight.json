@@ -1,0 +1,37 @@
+{
+  "id" : "ee9684f3-ad72-4792-ae5b-4024ed32a0a7",
+  "request" : {
+    "url" : "/flights",
+    "method" : "POST",
+    "headers" : {
+      "Content-Type" : {
+        "matches" : "application/json.*"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$[?(@.['price'] == 838.3052557413121)]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['aircraftId'] == 'AC123AX')]"
+    }, {
+      "matchesJsonPath" : "$.['departure'][?(@.['airportId'] == 1)]"
+    }, {
+      "matchesJsonPath" : "$.['departure'][?(@.['time'] == '2020-04-30T21:48:28.087524')]"
+    }, {
+      "matchesJsonPath" : "$.['departure'][?(@.['gate'] == '28C')]"
+    }, {
+      "matchesJsonPath" : "$.['arrival'][?(@.['airportId'] == 2)]"
+    }, {
+      "matchesJsonPath" : "$.['arrival'][?(@.['time'] == '2020-04-30T21:48:28.087524')]"
+    }, {
+      "matchesJsonPath" : "$.['arrival'][?(@.['gate'] == '28C')]"
+    } ]
+  },
+  "response" : {
+    "status" : 201,
+    "headers" : {
+      "Location" : "/flights/2"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "ee9684f3-ad72-4792-ae5b-4024ed32a0a7"
+}

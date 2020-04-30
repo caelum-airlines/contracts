@@ -1,0 +1,35 @@
+{
+  "id" : "729e64b0-3d1a-40d0-b8cf-7280160fb084",
+  "request" : {
+    "url" : "/flights",
+    "method" : "POST",
+    "headers" : {
+      "Content-Type" : {
+        "matches" : "application/json.*"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$[?(@.['price'] == -567.714552313146)]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['aircraft'] == 'AC123AX')]"
+    }, {
+      "matchesJsonPath" : "$.['departure'][?(@.['airportId'] == 1)]"
+    }, {
+      "matchesJsonPath" : "$.['departure'][?(@.['time'] == '2020-04-30T21:48:28.087524')]"
+    }, {
+      "matchesJsonPath" : "$.['departure'][?(@.['gate'] == '28C')]"
+    }, {
+      "matchesJsonPath" : "$.['arrival'][?(@.['airportId'] == 2)]"
+    }, {
+      "matchesJsonPath" : "$.['arrival'][?(@.['time'] == '2020-04-30T21:48:28.087524')]"
+    }, {
+      "matchesJsonPath" : "$.['arrival'][?(@.['gate'] == '28C')]"
+    } ]
+  },
+  "response" : {
+    "status" : 400,
+    "body" : "{\"errors\":[{\"message\":\"must be greater than 0\",\"field\":\"price\"}]}",
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "729e64b0-3d1a-40d0-b8cf-7280160fb084"
+}
