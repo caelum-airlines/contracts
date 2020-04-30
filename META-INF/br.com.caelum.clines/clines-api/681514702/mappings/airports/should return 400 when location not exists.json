@@ -1,0 +1,26 @@
+{
+  "id" : "172a258e-123e-4342-9b1e-2b7eee755123",
+  "request" : {
+    "url" : "/airports",
+    "method" : "POST",
+    "headers" : {
+      "Content-Type" : {
+        "matches" : "application/json.*"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$[?(@.['code'] == 'CGH')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['locationId'] == 3)]"
+    } ]
+  },
+  "response" : {
+    "status" : 400,
+    "body" : "{\"errors\":{\"message\":\"Invalid location\"}}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "172a258e-123e-4342-9b1e-2b7eee755123"
+}

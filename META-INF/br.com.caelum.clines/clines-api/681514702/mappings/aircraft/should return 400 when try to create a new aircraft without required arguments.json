@@ -1,0 +1,23 @@
+{
+  "id" : "7a39e03e-1291-445a-8a95-a3a336a8239f",
+  "request" : {
+    "url" : "/aircraft",
+    "method" : "POST",
+    "headers" : {
+      "Content-Type" : {
+        "matches" : "application/json.*"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$[?(@.['code'] == null)]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['modelId'] == null)]"
+    } ]
+  },
+  "response" : {
+    "status" : 400,
+    "body" : "{\"errors\":[{\"field\":\"code\",\"message\":\"must not be null\"},{\"field\":\"modelId\",\"message\":\"must not be null\"}]}",
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "7a39e03e-1291-445a-8a95-a3a336a8239f"
+}
