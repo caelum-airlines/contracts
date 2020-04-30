@@ -1,5 +1,5 @@
 {
-  "id" : "793ba34a-5a44-42b4-9f10-90d77f6d163a",
+  "id" : "ce56bb96-0a49-4b7a-a1d4-bf375f7a502f",
   "request" : {
     "url" : "/airports",
     "method" : "POST",
@@ -21,5 +21,5 @@
     },
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "793ba34a-5a44-42b4-9f10-90d77f6d163a"
+  "uuid" : "ce56bb96-0a49-4b7a-a1d4-bf375f7a502f"
 }

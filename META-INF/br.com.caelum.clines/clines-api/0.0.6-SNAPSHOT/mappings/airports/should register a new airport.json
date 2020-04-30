@@ -1,5 +1,5 @@
 {
-  "id" : "8c9c1954-178e-4c1a-8e98-e17c1b6d4945",
+  "id" : "fc440c1b-872a-42dd-9ba8-17b4f324eb71",
   "request" : {
     "url" : "/airports",
     "method" : "POST",
@@ -9,18 +9,17 @@
       }
     },
     "bodyPatterns" : [ {
-      "matchesJsonPath" : "$[?(@.['code'] == 'gru')]"
+      "matchesJsonPath" : "$[?(@.['code'] == 'cgh')]"
     }, {
       "matchesJsonPath" : "$[?(@.['locationId'] == 2)]"
     } ]
   },
   "response" : {
-    "status" : 409,
-    "body" : "{\"errors\":{\"message\":\"Airport already exists\"}}",
+    "status" : 201,
     "headers" : {
-      "Content-Type" : "application/json"
+      "Location" : "/airports/CGH"
     },
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "8c9c1954-178e-4c1a-8e98-e17c1b6d4945"
+  "uuid" : "fc440c1b-872a-42dd-9ba8-17b4f324eb71"
 }

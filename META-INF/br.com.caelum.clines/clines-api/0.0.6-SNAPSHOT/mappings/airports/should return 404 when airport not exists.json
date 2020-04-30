@@ -1,12 +1,12 @@
 {
-  "id" : "ff72a051-96d6-4185-a318-0f8cee30dedb",
+  "id" : "1d7f6e6c-0699-4ff8-a87e-7727734ebcbe",
   "request" : {
-    "url" : "/aircraft/AX123AC",
+    "url" : "/airports/cgh",
     "method" : "GET"
   },
   "response" : {
     "status" : 404,
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "ff72a051-96d6-4185-a318-0f8cee30dedb"
+  "uuid" : "1d7f6e6c-0699-4ff8-a87e-7727734ebcbe"
 }

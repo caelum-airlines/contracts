@@ -1,5 +1,5 @@
 {
-  "id" : "6f47ee7a-2b8a-4758-b8e7-01815215973f",
+  "id" : "f92df840-e0fd-4425-8056-6c4887e89a97",
   "request" : {
     "url" : "/airports/gru",
     "method" : "GET"
@@ -12,5 +12,5 @@
     },
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "6f47ee7a-2b8a-4758-b8e7-01815215973f"
+  "uuid" : "f92df840-e0fd-4425-8056-6c4887e89a97"
 }

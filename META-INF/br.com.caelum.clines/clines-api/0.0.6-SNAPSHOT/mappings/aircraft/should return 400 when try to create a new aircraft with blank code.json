@@ -1,5 +1,5 @@
 {
-  "id" : "2e754097-1a88-4822-819b-2c75250e4909",
+  "id" : "67379415-651f-40eb-aec2-de0e3824708c",
   "request" : {
     "url" : "/aircraft",
     "method" : "POST",
@@ -9,15 +9,15 @@
       }
     },
     "bodyPatterns" : [ {
-      "matchesJsonPath" : "$[?(@.['code'] == 'AX123AC')]"
+      "matchesJsonPath" : "$[?(@.['code'] == '')]"
     }, {
-      "matchesJsonPath" : "$[?(@.['modelId'] == 2)]"
+      "matchesJsonPath" : "$[?(@.['modelId'] == 1)]"
     } ]
   },
   "response" : {
     "status" : 400,
-    "body" : "{\"errors\":[{\"message\":\"Cannot find aircraft model\"}]}",
+    "body" : "{\"errors\":[{\"field\":\"code\",\"message\":\"must not be blank\"}]}",
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "2e754097-1a88-4822-819b-2c75250e4909"
+  "uuid" : "67379415-651f-40eb-aec2-de0e3824708c"
 }
