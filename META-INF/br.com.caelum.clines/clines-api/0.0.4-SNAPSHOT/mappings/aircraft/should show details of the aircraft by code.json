@@ -1,5 +1,5 @@
 {
-  "id" : "23a07d2d-2a9a-425a-a697-1b210c094257",
+  "id" : "dabb36ae-ea8e-4f76-b1fd-82a045b9fd28",
   "request" : {
     "url" : "/aircraft/BX123AC/",
     "method" : "GET"
@@ -12,5 +12,5 @@
     },
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "23a07d2d-2a9a-425a-a697-1b210c094257"
+  "uuid" : "dabb36ae-ea8e-4f76-b1fd-82a045b9fd28"
 }
