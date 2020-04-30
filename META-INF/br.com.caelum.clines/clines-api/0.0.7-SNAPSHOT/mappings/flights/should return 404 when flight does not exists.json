@@ -1,12 +1,12 @@
 {
-  "id" : "da7f4642-69a1-4a3e-b171-5e3982b500df",
+  "id" : "ee5c4a60-5d03-4072-9e1c-8dd505f2d0b2",
   "request" : {
-    "url" : "/aircraft/AX123AC",
+    "url" : "/flights/2",
     "method" : "GET"
   },
   "response" : {
     "status" : 404,
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "da7f4642-69a1-4a3e-b171-5e3982b500df"
+  "uuid" : "ee5c4a60-5d03-4072-9e1c-8dd505f2d0b2"
 }

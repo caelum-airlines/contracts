@@ -1,5 +1,5 @@
 {
-  "id" : "45d18c46-5771-48a3-acbc-6cf541457e93",
+  "id" : "aa0acf75-5bfd-4b9c-a89a-f46b4fa29a78",
   "request" : {
     "url" : "/aircraft",
     "method" : "POST",
@@ -21,5 +21,5 @@
     },
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "45d18c46-5771-48a3-acbc-6cf541457e93"
+  "uuid" : "aa0acf75-5bfd-4b9c-a89a-f46b4fa29a78"
 }

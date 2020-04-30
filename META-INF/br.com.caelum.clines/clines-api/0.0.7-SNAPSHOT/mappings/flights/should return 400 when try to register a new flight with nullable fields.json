@@ -1,5 +1,5 @@
 {
-  "id" : "a6243509-c65a-4883-820c-1eb9f6252c9d",
+  "id" : "61fa7715-bb18-4aa3-9a0e-1a2049f433e7",
   "request" : {
     "url" : "/flights",
     "method" : "POST",
@@ -23,5 +23,5 @@
     "body" : "{\"errors\":[{\"field\":\"price\",\"message\":\"must not be null\"},{\"field\":\"aircraftId\",\"message\":\"must not be blank\"},{\"field\":\"departure\",\"message\":\"must not be blank\"},{\"field\":\"arrival\",\"message\":\"must not be blank\"}]}",
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "a6243509-c65a-4883-820c-1eb9f6252c9d"
+  "uuid" : "61fa7715-bb18-4aa3-9a0e-1a2049f433e7"
 }

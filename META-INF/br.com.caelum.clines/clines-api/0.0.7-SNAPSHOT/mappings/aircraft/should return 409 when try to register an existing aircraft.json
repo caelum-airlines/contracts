@@ -1,5 +1,5 @@
 {
-  "id" : "9b4b6810-6a4a-48ca-8ccc-b481cbbd82a8",
+  "id" : "e41768ab-4842-4678-beaa-bdef98a279ca",
   "request" : {
     "url" : "/aircraft",
     "method" : "POST",
@@ -19,5 +19,5 @@
     "body" : "{\"errors\":[{\"message\":\"Aircraft already exists\"}]}",
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "9b4b6810-6a4a-48ca-8ccc-b481cbbd82a8"
+  "uuid" : "e41768ab-4842-4678-beaa-bdef98a279ca"
 }

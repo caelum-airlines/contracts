@@ -1,26 +1,29 @@
+package contracts.aircraft
+
 import org.springframework.cloud.contract.spec.Contract
 
-final BASE_URL = "/airports"
-final EXISTING_AIRPORT_CODE = "GRU"
-final NON_EXISTING_AIRPORT_CODE = "CGH"
+final BASE_URL = "/aircraft"
 
-final GRU_AIRPORT =  [
-        "code": "GRU",
-        "location": [
-                "country": "Brazil",
-                "state": "SP",
-                "city": "Guarulhos",
+final EXISTING_AIRCRAFT_CODE = "BX123AC"
+final NON_EXISTING_AIRCRAFT_CODE = "AX123AC"
+final DEFAULT_AIRCRAFT_MODEL = "Boeing 737"
+
+final DEFAULT_AIRCRAFT_RESULT = [
+        "code" : EXISTING_AIRCRAFT_CODE,
+        "model": [
+                "description": DEFAULT_AIRCRAFT_MODEL,
+                "id"         : 1
         ]
 ]
 
 [
         Contract.make {
-            name "should return an airport if exists"
+
+            name "should return a list of all aircraft"
 
             request {
+                url BASE_URL
                 method GET()
-
-                url "${BASE_URL}/${EXISTING_AIRPORT_CODE}"
             }
 
             response {
@@ -30,23 +33,43 @@ final GRU_AIRPORT =  [
                     contentType applicationJson()
                 }
 
-                body(GRU_AIRPORT)
+                body([DEFAULT_AIRCRAFT_RESULT])
             }
         },
 
         Contract.make {
 
-            name "should return 404 when airport not exists"
+            name "should show details of the aircraft by code"
 
             request {
+                url "${BASE_URL}/${EXISTING_AIRCRAFT_CODE}"
                 method GET()
 
-                url "${BASE_URL}/${NON_EXISTING_AIRPORT_CODE}"
+            }
+
+            response {
+                status OK()
+
+                headers {
+                    contentType applicationJson()
+                }
+
+                body(DEFAULT_AIRCRAFT_RESULT)
+            }
+        },
+
+        Contract.make {
+
+            name "should return 404 when receive a non-existing aircraft code"
+
+            request {
+                url "${BASE_URL}/${NON_EXISTING_AIRCRAFT_CODE}"
+                method GET()
+
             }
 
             response {
                 status NOT_FOUND()
-
                 bodyMatchers {
                     jsonPath('$', byRegex('^$'))
                 }
@@ -54,26 +77,7 @@ final GRU_AIRPORT =  [
         },
 
         Contract.make {
-            name "should return a list of existing airports"
-
-            request {
-                method GET()
-                url BASE_URL
-            }
-
-            response {
-                status OK()
-                headers {
-                    contentType applicationJson()
-                }
-
-                body([GRU_AIRPORT])
-            }
-        },
-
-        Contract.make {
-            name "should register a new airport"
-
+            name "should return 201 when register a new aircraft"
             request {
                 method POST()
 
@@ -84,8 +88,8 @@ final GRU_AIRPORT =  [
                 }
 
                 body(
-                        "code": NON_EXISTING_AIRPORT_CODE,
-                        "locationId": 2
+                        "code": NON_EXISTING_AIRCRAFT_CODE,
+                        "modelId": 1,
                 )
             }
 
@@ -93,21 +97,15 @@ final GRU_AIRPORT =  [
                 status CREATED()
 
                 headers {
-                    header(location(), "${BASE_URL}/${NON_EXISTING_AIRPORT_CODE.toUpperCase()}")
-                }
-
-                bodyMatchers {
-                    jsonPath('$', byRegex('^$'))
+                    header(location(), $(producer("${BASE_URL}/${NON_EXISTING_AIRCRAFT_CODE}"), consumer("${BASE_URL}/${fromRequest().body('$.code')}")))
                 }
             }
         },
 
         Contract.make {
-            name "should return 409 when already exists airport"
-
+            name "should return 409 when try to register an existing aircraft"
             request {
                 method POST()
-
                 url BASE_URL
 
                 headers {
@@ -115,32 +113,26 @@ final GRU_AIRPORT =  [
                 }
 
                 body(
-                        "code": EXISTING_AIRPORT_CODE,
-                        "locationId": 2
+                        "code": EXISTING_AIRCRAFT_CODE,
+                        "modelId": 1
                 )
             }
 
             response {
                 status CONFLICT()
 
-                headers {
-                    contentType applicationJson()
-                }
-
                 body(
                         "errors": [
-                                "message": "Airport already exists"
+                                ["message": "Aircraft already exists"]
                         ]
                 )
             }
         },
 
         Contract.make {
-            name "should return 400 when location not exists"
-
+            name "should return 400 when try to register a new aircraft with a non existing model id"
             request {
                 method POST()
-
                 url BASE_URL
 
                 headers {
@@ -148,33 +140,26 @@ final GRU_AIRPORT =  [
                 }
 
                 body(
-                        "code": NON_EXISTING_AIRPORT_CODE,
-                        "locationId": 3
+                        "code": NON_EXISTING_AIRCRAFT_CODE,
+                        "modelId": 2L
                 )
             }
 
             response {
                 status BAD_REQUEST()
-
-                headers {
-                    contentType applicationJson()
-                }
-
                 body(
                         "errors": [
-                                "message": "Invalid location"
+                                ["message": "Cannot find aircraft model"]
                         ]
                 )
             }
         },
 
-
         Contract.make {
-            name "should return 400 when try to register new airport without code and location"
+            name "should return 400 when try to create a new aircraft without required arguments"
 
             request {
                 method POST()
-
                 url BASE_URL
 
                 headers {
@@ -183,56 +168,51 @@ final GRU_AIRPORT =  [
 
                 body(
                         "code": null,
-                        "locationId": null
+                        "modelId": null
                 )
             }
 
             response {
                 status BAD_REQUEST()
 
-                headers {
-                    contentType applicationJson()
-                }
-
                 body(
                         "errors": [
-                                ["field":"code", "message": "must not be blank"],
-                                ["field":"locationId", "message": "must not be null"],
+                                ["field": "code", "message": "must not be null"],
+                                ["field": "modelId", "message": "must not be null"],
                         ]
                 )
+
+                bodyMatchers {
+                    jsonPath('$.errors', byType {
+                        minOccurrence(2)
+                    })
+                }
             }
         },
 
         Contract.make {
-            name "should return 400 when try to register a new airport with a negative locationId"
+            name "should return 400 when try to create a new aircraft with blank code"
 
             request {
                 method POST()
-
                 url BASE_URL
-
                 headers {
                     contentType applicationJson()
                 }
 
                 body(
-                        "code": NON_EXISTING_AIRPORT_CODE,
-                        "locationId": -2
+                        "code": "",
+                        "modelId": 1
                 )
             }
 
             response {
                 status BAD_REQUEST()
-
-                headers {
-                    contentType applicationJson()
-                }
-
                 body(
                         "errors": [
-                                ["message": "must be greater than 0", "field": "locationId"]
+                                ["field": "code", "message": "must not be blank"]
                         ]
                 )
             }
-        },
+        }
 ]

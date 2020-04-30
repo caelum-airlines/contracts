@@ -1,5 +1,5 @@
 {
-  "id" : "78726650-100a-468e-8634-f857d47f2605",
+  "id" : "b240088b-67d3-41de-9b6c-5f0fff618e21",
   "request" : {
     "url" : "/airports",
     "method" : "POST",
@@ -9,7 +9,7 @@
       }
     },
     "bodyPatterns" : [ {
-      "matchesJsonPath" : "$[?(@.['code'] == 'gru')]"
+      "matchesJsonPath" : "$[?(@.['code'] == 'GRU')]"
     }, {
       "matchesJsonPath" : "$[?(@.['locationId'] == 2)]"
     } ]
@@ -22,5 +22,5 @@
     },
     "transformers" : [ "response-template" ]
   },
-  "uuid" : "78726650-100a-468e-8634-f857d47f2605"
+  "uuid" : "b240088b-67d3-41de-9b6c-5f0fff618e21"
 }
