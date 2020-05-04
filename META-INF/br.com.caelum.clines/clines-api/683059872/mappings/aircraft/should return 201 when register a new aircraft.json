@@ -1,0 +1,25 @@
+{
+  "id" : "484f9f32-419d-4cf9-8861-a077ae2d691a",
+  "request" : {
+    "url" : "/aircraft",
+    "method" : "POST",
+    "headers" : {
+      "Content-Type" : {
+        "matches" : "application/json.*"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$[?(@.['code'] == 'AX123AC')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['modelId'] == 1)]"
+    } ]
+  },
+  "response" : {
+    "status" : 201,
+    "headers" : {
+      "Location" : "/aircraft/{{{jsonPath request.body '$.code'}}}"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "484f9f32-419d-4cf9-8861-a077ae2d691a"
+}
