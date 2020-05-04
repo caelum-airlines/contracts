@@ -1,0 +1,12 @@
+{
+  "id" : "97415c63-7994-47eb-90e0-002bc649e6a3",
+  "request" : {
+    "url" : "/flights/2",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 404,
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "97415c63-7994-47eb-90e0-002bc649e6a3"
+}
