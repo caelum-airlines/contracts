@@ -1,0 +1,16 @@
+{
+  "id" : "be8fe646-4f82-4869-81da-de26d8729455",
+  "request" : {
+    "url" : "/flights/1",
+    "method" : "GET"
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"id\":1,\"departure\":{\"time\":\"3190-06-26T22:34:15뮟29\",\"code\":\"GRU\",\"gate\":\"23C\"},\"arrival\":{\"time\":\"6497-05-30T02:31:45铧03\",\"code\":\"CGH\",\"gate\":\"12B\"},\"price\":76.21031247559893,\"aircraft\":{\"code\":\"AC123AX\",\"model\":{\"id\":1,\"description\":\"Boeing 737 800\"}}}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "be8fe646-4f82-4869-81da-de26d8729455"
+}
