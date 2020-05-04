@@ -1,0 +1,35 @@
+{
+  "id" : "73751f86-d667-4575-8972-25ff201f1b1b",
+  "request" : {
+    "url" : "/flights",
+    "method" : "POST",
+    "headers" : {
+      "Content-Type" : {
+        "matches" : "application/json.*"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$[?(@.['price'] == 738.6712661485918)]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['aircraftId'] == 'BC123AX')]"
+    }, {
+      "matchesJsonPath" : "$.['departure'][?(@.['airportId'] == 3)]"
+    }, {
+      "matchesJsonPath" : "$.['departure'][?(@.['time'] == '2020-05-05T15:08:11.972717')]"
+    }, {
+      "matchesJsonPath" : "$.['departure'][?(@.['gate'] == '28C')]"
+    }, {
+      "matchesJsonPath" : "$.['arrival'][?(@.['airportId'] == 4)]"
+    }, {
+      "matchesJsonPath" : "$.['arrival'][?(@.['time'] == '2020-05-05T15:08:11.972717')]"
+    }, {
+      "matchesJsonPath" : "$.['arrival'][?(@.['gate'] == '28C')]"
+    } ]
+  },
+  "response" : {
+    "status" : 400,
+    "body" : "{\"errors\":[{\"message\":\"Invalid Aircraft\"},{\"message\":\"Invalid Departure\"},{\"message\":\"Invalid Arrival\"}]}",
+    "transformers" : [ "response-template" ]
+  },
+  "uuid" : "73751f86-d667-4575-8972-25ff201f1b1b"
+}
